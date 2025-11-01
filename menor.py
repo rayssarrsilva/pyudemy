@@ -1,14 +1,16 @@
 #Retorne o menor valor digitado pelo usuário.
 
-a = int(input("Digite o primeiro número: "))
-b = int(input("Digite o segundo número: "))
-c = int(input("Digite o terceiro número: "))
+def menor_valor(form):
+    # pega os três números do formulário
+    a = int(form["a"])
+    b = int(form["b"])
+    c = int(form["c"])
 
-if a < b and a < c:
-    menor = a
-elif b < c:
-    menor = b
-else:
-    menor = c 
+    if a < b and a < c:
+        menor = a
+    elif b < c:
+        menor = b
+    else:
+        menor = c
 
-print(f"O menor valor digitado é: {menor}")
+    return menor
