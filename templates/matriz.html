@@ -3,18 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <title>Matriz - Passo 2</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background: #f8fafc;
+      color: #1f2937;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+    }
+
+    .container {
+      background: #fff;
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+      gap: 10px;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 1rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input[type="number"]:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
+      outline: none;
+    }
+
+    button {
+      align-self: center;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.1s ease;
+    }
+
+    button:hover {
+      background: #1e40af;
+    }
+
+    button:active {
+      transform: scale(0.97);
+    }
+  </style>
 </head>
 <body>
-  <h1>Preencha os valores da matriz {{n}} x {{n}}</h1>
-  <form method="POST" action="/resultado">
-    <input type="hidden" name="n" value="{{n}}">
-    {% for i in range(n) %}
-      {% for j in range(n) %}
-        <input type="number" step="any" name="valores" placeholder="[{{i}},{{j}}]" required>
-      {% endfor %}
-      <br>
-    {% endfor %}
-    <button type="submit">Calcular</button>
-  </form>
+  <div class="container">
+    <h1>Preencha os valores da matriz {{n}} x {{n}}</h1>
+    <form method="POST" action="/resultado">
+      <input type="hidden" name="n" value="{{n}}">
+      <div class="grid">
+        {% for i in range(n) %}
+          {% for j in range(n) %}
+            <input type="number" step="any" name="valores" placeholder="[{{i}},{{j}}]" required>
+          {% endfor %}
+        {% endfor %}
+      </div>
+      <button type="submit">Calcular</button>
+    </form>
+  </div>
 </body>
 </html>

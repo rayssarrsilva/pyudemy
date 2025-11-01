@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Resultado da Matriz</title>
+  <title>Resultado</title>
   <style>
     * {
       margin: 0;
@@ -26,7 +26,7 @@
       border-radius: 16px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.1);
       text-align: center;
-      max-width: 500px;
+      max-width: 400px;
       width: 100%;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
@@ -36,34 +36,26 @@
       box-shadow: 0 10px 24px rgba(0,0,0,0.15);
     }
 
-    h1 {
-      font-size: 1.6rem;
+    h2 {
+      font-size: 1.5rem;
       font-weight: 600;
       color: #111827;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     p {
-      font-size: 1.1rem;
-      margin-bottom: 12px;
-      color: #374151;
-    }
-
-    strong {
-      color: #111827;
-    }
-
-    .highlight {
+      font-size: 2rem;
       font-weight: bold;
       color: #2563eb;
       background: #eff6ff;
-      padding: 6px 12px;
-      border-radius: 8px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      display: inline-block;
     }
 
-    a {
-      display: inline-block;
+    .btn {
       margin-top: 20px;
+      display: inline-block;
       padding: 10px 16px;
       border-radius: 8px;
       background: #2563eb;
@@ -73,17 +65,17 @@
       transition: background 0.2s ease;
     }
 
-    a:hover {
+    .btn:hover {
       background: #1e40af;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Resultado da Matriz</h1>
-    <p><strong>Diagonal principal:</strong> <span class="highlight">{{ diagonal|join(", ") }}</span></p>
-    <p><strong>Números negativos:</strong> <span class="highlight">{{ negativos }}</span></p>
-    <a href="/">Voltar</a>
+    <h2>O menor valor digitado foi:</h2>
+    <p>{{ menor }}</p>
+    <br>
+    <a href="/" class="btn">Voltar</a>
   </div>
 </body>
 </html>
