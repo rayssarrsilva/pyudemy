@@ -1,6 +1,4 @@
 def processar_matriz(n, valores):
-    n = int(input("Digite o tamanho do vetor: "))
-
     mat = [[0 for _ in range(n)] for _ in range(n)]
 
     k = 0

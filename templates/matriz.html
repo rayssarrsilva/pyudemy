@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Matriz - Passo 2</title>
+</head>
+<body>
+  <h1>Preencha os valores da matriz {{n}} x {{n}}</h1>
+  <form method="POST" action="/resultado">
+    <input type="hidden" name="n" value="{{n}}">
+    {% for i in range(n) %}
+      {% for j in range(n) %}
+        <input type="number" step="any" name="valores" placeholder="[{{i}},{{j}}]" required>
+      {% endfor %}
+      <br>
+    {% endfor %}
+    <button type="submit">Calcular</button>
+  </form>
+</body>
+</html>
